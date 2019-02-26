@@ -1,0 +1,17 @@
+function[satID_s,year_s,day_s,milsec_s,time_s,alt_s,lat_s,lon_s,L_s,B_s,variables_s]=dataSlim(satID,year,day,milsec,time,alt,lat,lon,L,B,variables)
+%slim数据，去掉L<1.1和L>7的数据记录
+slim=find(L(:,1)<1.1|L(:,1)>7);
+satID_s=satID;year_s=year;day_s=day;milsec_s=milsec;time_s=time;
+alt_s=alt;lat_s=lat;lon_s=lon;L_s=L;B_s=B;variables_s=variables;
+satID_s(slim(:,1),:)=[];
+year_s(slim(:,1),:)=[];
+day_s(slim(:,1),:)=[];
+milsec_s(slim(:,1),:)=[];
+time_s(slim(:,1),:)=[];
+alt_s(slim(:,1),:)=[];
+lat_s(slim(:,1),:)=[];
+lon_s(slim(:,1),:)=[];
+L_s(slim(:,1),:)=[];
+B_s(slim(:,1),:)=[];
+variables_s(slim(:,1),:)=[];
+end 
